@@ -29,7 +29,7 @@ class SongsController < ApplicationController
     if p.allow_create_songs
       @song = Song.new
     else
-      redirect_to songs_path, alert: "Not allowed to create songs."
+      redirect_to songs_path, alert: "Create songs disabled"
     end
   end
 
@@ -72,4 +72,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
